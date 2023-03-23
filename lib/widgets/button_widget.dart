@@ -11,6 +11,7 @@ class ButtonWidget extends StatelessWidget {
   final Color disabledShadowColor;
   final Color disabledTextColor;
   final bool expanded;
+  final bool withShadow;
 
   const ButtonWidget({
     required this.action,
@@ -22,7 +23,8 @@ class ButtonWidget extends StatelessWidget {
     this.disabledTextColor =  const Color.fromRGBO(255, 222, 89, 1),
     this.type = "default",
     this.title = "VALIDER",
-    this.expanded = true
+    this.expanded = true,
+    this.withShadow = false
   });
 
   @override
@@ -80,13 +82,15 @@ class ButtonWidget extends StatelessWidget {
             borderRadius: BorderRadius.all(
               Radius.circular(buttonBorderRadius)
             ),
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                color: shawdowColor,
-                blurRadius: blurRadius,
-                offset: Offset(0.0, offSetDy),
-              ),
-            ],
+            boxShadow: withShadow
+              ? <BoxShadow>[
+                  BoxShadow(
+                    color: shawdowColor,
+                    blurRadius: blurRadius,
+                    offset: Offset(0.0, offSetDy),
+                  ),
+                ]
+              : const <BoxShadow>[]
           ),
           child: Center(
             child: Text(
@@ -101,5 +105,5 @@ class ButtonWidget extends StatelessWidget {
         ),
       ),
     );
-  }  
+  }
 }
