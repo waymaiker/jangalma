@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:jangalma/widgets/exit_button_widget.dart';
 
 class TopBarWidget extends StatelessWidget {
-  String text;
-  bool defaultStyle;
-  Widget widget;
+  final String text;
+  final bool defaultStyle;
+  final Widget widget;
 
-  TopBarWidget({
+  const TopBarWidget({
     this.widget = const SizedBox(),
     this.text = '',
     this.defaultStyle = true
@@ -15,20 +15,17 @@ class TopBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(4.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          defaultStyle 
-            ? defaultStyleWidget() 
-            : widget,
-          ExitButtonWidget(actions: () => {
-            Navigator.pushNamed(context, '/home')
-          })
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        defaultStyle
+          ? defaultStyleWidget()
+          : widget,
+        ExitButtonWidget(actions: () => {
+          Navigator.pushNamed(context, '/home')
+        })
+      ],
     );
   }
 
@@ -38,7 +35,7 @@ class TopBarWidget extends StatelessWidget {
         Text(
           text,
           style: const TextStyle(
-            fontWeight: FontWeight.bold, 
+            fontWeight: FontWeight.bold,
             fontSize: 25
           )
         ),
