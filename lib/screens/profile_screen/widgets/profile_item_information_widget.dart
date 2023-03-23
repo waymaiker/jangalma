@@ -54,13 +54,12 @@ class ProfileItemInformationWidget extends StatelessWidget {
         edit
          ? Container(
             padding: const EdgeInsets.symmetric(vertical: 8),
-            width: MediaQuery.of(context).size.width*.7,            
+            width: MediaQuery.of(context).size.width*.7,
             child: TextField(
               keyboardType: TextInputType.text,
               onChanged: (value) => onChanged(value),
               decoration: InputDecoration(
                 hintText: text,
-                border: const OutlineInputBorder(),
               ),
             ),
          )

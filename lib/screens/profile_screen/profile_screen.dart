@@ -39,8 +39,8 @@ class ProfileScreen extends HookWidget {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              TopBarWidget(text: "PROFILE"),
-              SizedBox(height: MediaQuery.of(context).size.height*.1),
+              const TopBarWidget(text: "PROFILE"),
+              SizedBox(height: MediaQuery.of(context).size.height*.05),
               headerProfile(viewModel, context),
               SizedBox(height: MediaQuery.of(context).size.height*.02),
               ProfileItemInformationWidget(
