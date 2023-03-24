@@ -42,45 +42,56 @@ class ThemeController extends ChangeNotifier {
 
   static final ThemeData lightTheme = ThemeData(
     primaryColor: _primaryColorLightTheme,
-    textTheme: _lightThemeText,
+    primaryTextTheme: _lightThemeText,
+    colorScheme: ColorScheme.light(
+      primary: Colors.blue.shade900,
+      secondary: Colors.blue.shade900.withOpacity(0.5)
+    )
   );
 
   static final ThemeData darkTheme = ThemeData(
     primaryColor: _primaryColorDarkTheme,
-    textTheme: _darkThemeText,
+    primaryTextTheme: _darkThemeText,
+    colorScheme: ColorScheme.dark(
+      primary: Colors.blue.shade900,
+      secondary: Colors.blue.shade900.withOpacity(0.5)
+    )
   );
 
   // ************************ TEXT THEME ***************************
-  
+
   // Create default text style, which allow us to create custom
-  static final TextStyle defaultTextStyle = 
-    TextStyle(
-      fontWeight: FontWeight.normal,
-      color: _primaryColorLightTheme,
-      fontFamily: "Nunito"
-    );
+  static final TextStyle defaultTextStyle = TextStyle(
+    fontWeight: FontWeight.normal,
+    color: Colors.grey.shade600,
+    fontFamily: "Nunito"
+  );
 
   static final TextTheme _lightThemeText = TextTheme(
     headline1: defaultTextStyle.copyWith(
-      fontSize: 30,
+      fontSize: 35,
       fontWeight: FontWeight.bold
     ),
     headline2: defaultTextStyle.copyWith(
       fontSize: 24,
       fontWeight: FontWeight.bold
-    ),     
+    ),
+    bodyText1: defaultTextStyle.copyWith(
+      fontSize: 16,
+    )
   );
 
   static final TextTheme _darkThemeText = TextTheme(
     headline1: defaultTextStyle.copyWith(
-      fontSize: 30,
+      fontSize: 35,
       fontWeight: FontWeight.bold,
-      color: _primaryColorDarkTheme,
     ),
     headline2: defaultTextStyle.copyWith(
       fontSize: 24,
       fontWeight: FontWeight.bold,
-      color: _primaryColorDarkTheme,
-    ),    
+    ),
+    bodyText1: defaultTextStyle.copyWith(
+      fontSize: 16,
+    )
   );
 }
