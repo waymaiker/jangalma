@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:jangalma/helpers/utils.dart';
 import 'package:jangalma/screens/login_screen/viewmodels/login_viewmodel.dart';
 import 'package:jangalma/widgets/button_widget.dart';
 import 'package:jangalma/widgets/text_field_widget.dart';
@@ -52,13 +53,19 @@ class LogInScreen extends HookWidget {
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height*.02),
                 ButtonWidget(
-                  type: viewmodel.email.isNotEmpty && viewmodel.password.isNotEmpty ? 'enabled' : 'default',
+                  type: viewmodel.email.isNotEmpty && viewmodel.password.isNotEmpty &&
+                    validateEmail(viewmodel.email) == null
+                    && validatePassword(viewmodel.password) == null
+                      ? 'enabled'
+                      : 'default',
                   disabledBackgroundColor: Theme.of(context).colorScheme.secondary,
                   enabledBackgroundColor: Theme.of(context).colorScheme.primary,
                   disabledTextColor: Colors.grey.shade300,
                   title: "Login",
                   action: ()=>{
-                    Navigator.pushNamed(context, '/home')
+                    if(validateEmail(viewmodel.email) == null && validatePassword(viewmodel.password) == null) {
+                      Navigator.pushNamed(context, '/home')
+                    }
                   }
                 )
               ],
