@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
 import 'package:jangalma/widgets/card_item_container_widget.dart';
 
 class CardItemHomeScreenWidget extends StatelessWidget {
@@ -19,18 +21,18 @@ class CardItemHomeScreenWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, '/quiz'),
+      onTap: () => GoRouter.of(context).go('/quiz'),
       child: CardItemContainerWidget(
         backgroundColor: id%3,
         widget: Row(
-          children: [              
+          children: [
             SizedBox(
               width: MediaQuery.of(context).size.width*.8,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CardContentWidget(name: name, numberOfQuestions: numberOfQuestions),
-                  CardItemLevel(level: level),               
+                  CardItemLevel(level: level),
                 ],
               ),
             ),
@@ -49,7 +51,7 @@ class CardItemHomeScreenWidget extends StatelessWidget {
       ),
       borderRadius: const BorderRadius.all(
         Radius.circular(10)
-      ),     
+      ),
     );
   }
 }

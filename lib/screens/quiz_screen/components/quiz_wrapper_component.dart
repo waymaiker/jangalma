@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:hangingword/hangingword.dart';
@@ -45,7 +46,7 @@ class QuizWrapperComponent extends HookWidget {
       progressionHandler();
       isNotLastQuestion()
         ? questionIndex.value++
-        : Navigator.pushNamed(context, '/ranking');
+        : GoRouter.of(context).go('/ranking');
     }
 
     useEffect(() {}, [viewModel.questions]);
@@ -162,7 +163,7 @@ class QuizWrapperComponent extends HookWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         body: viewModel.questions.isNotEmpty ?
-          Column(          
+          Column(
             children: [
               TopBarWidget(
                 defaultStyle: false,
@@ -172,7 +173,7 @@ class QuizWrapperComponent extends HookWidget {
                     ? progressionIndex.value
                     : viewModel.questions.length
                 ),
-              ),              
+              ),
               questionWidget
             ],
           )

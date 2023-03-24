@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:jangalma/helpers/utils.dart';
 import 'package:jangalma/screens/login_screen/viewmodels/login_viewmodel.dart';
@@ -64,7 +65,7 @@ class LogInScreen extends HookWidget {
                   title: "Login",
                   action: ()=>{
                     if(validateEmail(viewmodel.email) == null && validatePassword(viewmodel.password) == null) {
-                      Navigator.pushNamed(context, '/home')
+                      GoRouter.of(context).go('/home')
                     }
                   }
                 )

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:jangalma/widgets/exit_button_widget.dart';
 
@@ -23,7 +24,7 @@ class TopBarWidget extends StatelessWidget {
           ? defaultStyleWidget()
           : widget,
         ExitButtonWidget(actions: () => {
-          Navigator.pushNamed(context, '/home')
+          GoRouter.of(context).go('/home')
         })
       ],
     );
