@@ -7,6 +7,7 @@ import 'package:jangalma/screens/login_screen/login_screen.dart';
 import 'package:jangalma/screens/quiz_screen/quiz_screen.dart';
 import 'package:jangalma/screens/profile_screen/profile_screen.dart';
 import 'package:jangalma/screens/ranking_screen/ranking_screen.dart';
+import 'package:jangalma/widgets/fade_transition_widget.dart';
 
 class ScreenPaths {
   static String login = '/';
@@ -19,11 +20,11 @@ class ScreenPaths {
 final appRouter = GoRouter(
   initialLocation: '/',
   routes: [
-    AppRoute(ScreenPaths.login, (_) => const LogInScreen()),
-    AppRoute(ScreenPaths.home, (_) => const HomeScreen()),
-    AppRoute(ScreenPaths.quiz, (_) => const QuizScreen()),
-    AppRoute(ScreenPaths.ranking, (_) => const RankingScreen()),
-    AppRoute(ScreenPaths.profile, (_) => const ProfileScreen()),
+    AppRoute(ScreenPaths.login, (_) => const LogInScreen(), useFade: true),
+    AppRoute(ScreenPaths.home, (_) => const HomeScreen(), useFade: true),
+    AppRoute(ScreenPaths.quiz, (_) => const QuizScreen(), useFade: true),
+    AppRoute(ScreenPaths.ranking, (_) => const RankingScreen(), useFade: true),
+    AppRoute(ScreenPaths.profile, (_) => const ProfileScreen(), useFade: true),
   ],
 );
 
@@ -45,7 +46,7 @@ class AppRoute extends GoRoute {
             key: state.pageKey,
             child: pageContent,
             transitionsBuilder: (context, animation, secondaryAnimation, child) {
-              return FadeTransition(opacity: animation, child: child);
+              return FadeTransitionWidget(child: child);
             },
           );
         }
