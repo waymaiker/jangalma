@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:jangalma/screens/profile_screen/models/user.dart';
+import 'package:jangalma/screens/profile_screen/models/user_model.dart';
 
 import 'package:jangalma/screens/profile_screen/viewmodels/profile_viewmodel.dart';
 import 'package:jangalma/screens/profile_screen/widgets/edit_profile_button_widget.dart';
@@ -21,6 +21,7 @@ class ProfileScreen extends HookWidget {
     useEffect(() {
       viewModel.init(
         UserModel(
+          id: 1,
           name: "Cassandra Jean", 
           pseudoTag: "mytagforthisapp", 
           email: "fakeemail@mailchip.com", 
