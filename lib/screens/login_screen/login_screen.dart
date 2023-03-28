@@ -54,17 +54,13 @@ class LogInScreen extends HookWidget {
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height*.02),
                 ButtonWidget(
-                  type: viewmodel.email.isNotEmpty && viewmodel.password.isNotEmpty &&
-                    validateEmail(viewmodel.email) == null
-                    && validatePassword(viewmodel.password) == null
-                      ? 'enabled'
-                      : 'default',
+                  type: viewmodel.isFormValid() ? 'enabled' : 'default',
                   disabledBackgroundColor: Theme.of(context).colorScheme.secondary,
                   enabledBackgroundColor: Theme.of(context).colorScheme.primary,
                   disabledTextColor: Colors.grey.shade300,
                   title: "Login",
                   action: ()=>{
-                    if(validateEmail(viewmodel.email) == null && validatePassword(viewmodel.password) == null) {
+                    if(viewmodel.isFormValid()) {
                       GoRouter.of(context).go('/home')
                     }
                   }
@@ -78,10 +74,13 @@ class LogInScreen extends HookWidget {
                 text: "Don't have an account yet?",
                 color: Theme.of(context).colorScheme.primary,
               ),
-              TextWidget(
-                text: "Sign in",
-                fontWeight: FontWeight.bold,
-                color: Theme.of(context).colorScheme.primary,
+              GestureDetector(
+                onTap: () => GoRouter.of(context).go('/signup'),
+                child: TextWidget(
+                  text: "Sign up",
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
               ),
             ],
           )
