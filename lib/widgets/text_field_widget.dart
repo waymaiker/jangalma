@@ -8,6 +8,7 @@ class TextFieldWidget extends StatelessWidget {
   final bool isActive;
   final String hintText;
   final Function onChanged;
+  final bool isConfirmPasswordValid;
 
   const TextFieldWidget({
     required this.type,
@@ -15,6 +16,7 @@ class TextFieldWidget extends StatelessWidget {
     required this.hintText,
     required this.onChanged,
     required this.currentText,
+    this.isConfirmPasswordValid = false,
     this.isActive = false,
   });
 
@@ -32,6 +34,10 @@ class TextFieldWidget extends StatelessWidget {
       case "phone":
         keyboardType = TextInputType.phone;
         break;
+      case "text":
+        keyboardType = TextInputType.text;
+        validator = validateString;
+        break;
       case "password":
         keyboardType = TextInputType.visiblePassword;
         validator = validatePassword;
@@ -46,6 +52,7 @@ class TextFieldWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8),
       width: MediaQuery.of(context).size.width*.9,
       child: TextFormField(
+        scrollPadding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom+MediaQuery.of(context).size.height*.5),
         validator: (value) => validator(value),
         obscureText: obscureText,
         keyboardType: keyboardType,
@@ -63,7 +70,11 @@ class TextFieldWidget extends StatelessWidget {
               width: 1.0
             ),
           ),
-          errorText: validator(currentText),
+          errorText: label == "First Name" || label == "Last Name"
+            ? validator(label, currentText, null)
+            : label == "Confirm Password" && isConfirmPasswordValid
+              ? "Entry is not equals to password"
+              : validator(currentText, null),
           labelText: label,
           hintText: hintText,
           hintStyle: TextStyle(
