@@ -14,16 +14,16 @@ class SignUpScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final viewmodel = useProvider(signupViewModelProvider);
-  
+
     useEffect((){
-      viewmodel.init();    
+      viewmodel.init();
     }, []);
 
     useEffect((){},[
-      viewmodel.firstName, 
-      viewmodel.lastName, 
-      viewmodel.email, 
-      viewmodel.password,
+      viewmodel.user.fullName,
+      viewmodel.user.pseudoTag,
+      viewmodel.user.email,
+      viewmodel.user.password,
       viewmodel.confirmPassword,
       viewmodel.isConditionAccetped
     ]);
@@ -31,48 +31,48 @@ class SignUpScreen extends HookWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          children: [            
+          children: [
             SizedBox(
               height: MediaQuery.of(context).size.height*.85,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [        
+                children: [
                   TextWidget(
                     text: 'Sign In',
                     type: 'headlineLarge',
                     color: Theme.of(context).colorScheme.primary,
-                  ),               
-                  TextFieldWidget(
-                    currentText: viewmodel.firstName,
-                    label: "First Name",
-                    hintText: "First name",
-                    type: 'text',
-                    onChanged: viewmodel.setFirstName,
-                    isActive: viewmodel.firstName.isNotEmpty,
                   ),
                   TextFieldWidget(
-                    currentText: viewmodel.lastName,
-                    label: "Last Name",
-                    hintText: "Last name",
+                    currentText: viewmodel.user.fullName,
+                    label: "Full name",
+                    hintText: "Full name",
                     type: 'text',
-                    onChanged: viewmodel.setLastName,
-                    isActive: viewmodel.lastName.isNotEmpty,
+                    onChanged: viewmodel.setfullName,
+                    isActive: viewmodel.user.fullName.isNotEmpty,
                   ),
                   TextFieldWidget(
-                    currentText: viewmodel.email,
+                    currentText: viewmodel.user.pseudoTag,
+                    label: "Pseudo",
+                    hintText: "Pseudo",
+                    type: 'text',
+                    onChanged: viewmodel.setPseudoTag,
+                    isActive: viewmodel.user.pseudoTag.isNotEmpty,
+                  ),
+                  TextFieldWidget(
+                    currentText: viewmodel.user.email,
                     label: "E-Mail",
                     hintText: "Enter an email",
                     type: 'email',
                     onChanged: viewmodel.setEmail,
-                    isActive:  viewmodel.email.isNotEmpty,
+                    isActive:  viewmodel.user.email.isNotEmpty,
                   ),
                   TextFieldWidget(
-                    currentText: viewmodel.password,
+                    currentText: viewmodel.user.password,
                     label: "Password",
                     hintText: "Enter your password",
                     type: 'password',
                     onChanged: viewmodel.setPassword,
-                    isActive: viewmodel.password.isNotEmpty,
+                    isActive: viewmodel.user.password.isNotEmpty,
                   ),
                   TextFieldWidget(
                     currentText: viewmodel.confirmPassword,
@@ -107,8 +107,11 @@ class SignUpScreen extends HookWidget {
               disabledTextColor: Colors.grey.shade300,
               title: "Continue",
               action: () => {
+                  viewmodel.createAccount(),
                 if(viewmodel.isFormValid()) {
                   GoRouter.of(context).go('/home')
+                } else {
+                  print("lock")
                 }
               }
             ),

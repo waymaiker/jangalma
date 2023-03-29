@@ -70,7 +70,7 @@ class TextFieldWidget extends StatelessWidget {
               width: 1.0
             ),
           ),
-          errorText: label == "First Name" || label == "Last Name"
+          errorText: label == "Full name" || label == "Pseudo"
             ? validator(label, currentText, null)
             : label == "Confirm Password" && isConfirmPasswordValid
               ? "Entry is not equals to password"

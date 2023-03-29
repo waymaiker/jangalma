@@ -1,9 +1,9 @@
 String? validateString(String type, String? value, Function? hasError) {
   String? message;
   if(value!.isEmpty){
-    type == 'First Name'
-      ? message = "First name can't be empty"
-      : message = "Last name can't be empty";
+    type == 'Full name'
+      ? message = "Full name can't be empty"
+      : message = "Pseudo can't be empty";
   }
 
   if(hasError != null){

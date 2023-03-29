@@ -22,12 +22,12 @@ class ProfileScreen extends HookWidget {
       viewModel.init(
         UserModel(
           id: 1,
-          name: "Cassandra Jean", 
-          pseudoTag: "mytagforthisapp", 
-          email: "fakeemail@mailchip.com", 
-          phone: "+33 6 48 65 23 79", 
+          fullName: "Cassandra Jean",
+          pseudoTag: "mytagforthisapp",
+          email: "fakeemail@mailchip.com",
+          phone: "+33 6 48 65 23 79",
           location: "Paris, FRANCE",
-          image: "https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_1280.jpg"
+          photoURL: "https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_1280.jpg"
         )
       );
     }, []);
@@ -46,7 +46,7 @@ class ProfileScreen extends HookWidget {
               SizedBox(height: MediaQuery.of(context).size.height*.02),
               ProfileItemInformationWidget(
                 editInput: viewModel.edit,
-                onChanged:  viewModel.setEmail,            
+                onChanged:  viewModel.setEmail,
                 text: viewModel.user.email,
                 icon: FontAwesomeIcons.envelope,
                 label: 'Email',
@@ -85,15 +85,15 @@ class ProfileScreen extends HookWidget {
       child: Column(
         children: [
           ImageWidget(
-            src: viewModel.image,
+            src: viewModel.photoURL,
             sizeIcon: 2,
           ),
-          profileName(viewModel.user.name),
+          profileName(viewModel.user.fullName),
           pseudoTag(viewModel.user.pseudoTag),
           SizedBox(height: MediaQuery.of(context).size.height*.01),
           EditProfileButtonWidget(
             isEdit: viewModel.edit,
-            save: () {viewModel.saveProfile(); viewModel.setEdit();}, 
+            save: () {viewModel.saveProfile(); viewModel.setEdit();},
             edit:  viewModel.setEdit
           )
         ],

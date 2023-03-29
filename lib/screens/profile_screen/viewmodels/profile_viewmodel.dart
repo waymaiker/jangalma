@@ -9,8 +9,8 @@ final profileViewModelProvider = ChangeNotifierProvider(
 
 class ProfileViewModel extends ChangeNotifier {
   late UserModel user;
-  late String image;
-  late String name;
+  late String photoURL;
+  late String fullName;
   late String email;
   late String phone;
   late String pseudo;
@@ -21,8 +21,8 @@ class ProfileViewModel extends ChangeNotifier {
 
   void init(UserModel userReceived){
     user = userReceived;
-    name = userReceived.name;
-    image = userReceived.image;
+    fullName = userReceived.fullName;
+    photoURL = userReceived.photoURL;
     email = userReceived.email;
     phone = userReceived.phone;
     pseudo = userReceived.pseudoTag;
@@ -30,7 +30,7 @@ class ProfileViewModel extends ChangeNotifier {
   }
 
   void saveProfile(){
-    user.name = name;
+    user.fullName = fullName;
     user.email = email;
     user.phone = phone;
     user.pseudoTag = pseudo;
@@ -43,8 +43,8 @@ class ProfileViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setName(String nameReceived){
-    name = nameReceived;
+  void setfullName(String fullNameReceived){
+    fullName = fullNameReceived;
     notifyListeners();
   }
 
