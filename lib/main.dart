@@ -8,7 +8,8 @@ import 'package:jangalma/app_wrapper.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
+    name: 'mybeta',
+    options: DefaultFirebaseOptions.currentPlatform,
   );
 
   runApp(

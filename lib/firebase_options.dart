@@ -44,40 +44,40 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBfJKkvLgAwJT0EmGPElAxSXywX3x4V_1I',
-    appId: '1:472759397512:web:884df0d6ed53a4f506033d',
-    messagingSenderId: '472759397512',
-    projectId: 'beta-learning-f75cb',
-    authDomain: 'beta-learning-f75cb.firebaseapp.com',
-    storageBucket: 'beta-learning-f75cb.appspot.com',
-    measurementId: 'G-15TR6QY5JN',
+    apiKey: 'AIzaSyBZom0HSXOhh0aM9exYs7YILToSvoMB9_8',
+    appId: '1:416537931713:web:4827d41eee8b3aa97a0940',
+    messagingSenderId: '416537931713',
+    projectId: 'beta-jangalma',
+    authDomain: 'beta-jangalma.firebaseapp.com',
+    storageBucket: 'beta-jangalma.appspot.com',
+    measurementId: 'G-MFVEV2QQS7',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBLC_9TEYa_FRXj1kMXpxBFGOWZXoyYdd4',
-    appId: '1:472759397512:android:2bb2bd2002962ff606033d',
-    messagingSenderId: '472759397512',
-    projectId: 'beta-learning-f75cb',
-    storageBucket: 'beta-learning-f75cb.appspot.com',
+    apiKey: 'AIzaSyDmNJ1HY3ba_UrWIpDtAxSUqmdlfDKdkOU',
+    appId: '1:416537931713:android:1f915c6fc75d76d27a0940',
+    messagingSenderId: '416537931713',
+    projectId: 'beta-jangalma',
+    storageBucket: 'beta-jangalma.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD6Uv48vumR9a7VrFtylqpk7Z81NV7n5RA',
-    appId: '1:472759397512:ios:c9e08de282c3ba5b06033d',
-    messagingSenderId: '472759397512',
-    projectId: 'beta-learning-f75cb',
-    storageBucket: 'beta-learning-f75cb.appspot.com',
-    iosClientId: '472759397512-urbg7k8plrlohffc8ua3bh3i9cvh18ms.apps.googleusercontent.com',
+    apiKey: 'AIzaSyCl53-uQuvw3Ev1WJOisC8SlSGNfYuBHVA',
+    appId: '1:416537931713:ios:8c318939d89c65da7a0940',
+    messagingSenderId: '416537931713',
+    projectId: 'beta-jangalma',
+    storageBucket: 'beta-jangalma.appspot.com',
+    iosClientId: '416537931713-e0mevkflsjpgktfihu4nh8qehf904ef9.apps.googleusercontent.com',
     iosBundleId: 'com.example.jangalma',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyD6Uv48vumR9a7VrFtylqpk7Z81NV7n5RA',
-    appId: '1:472759397512:ios:c9e08de282c3ba5b06033d',
-    messagingSenderId: '472759397512',
-    projectId: 'beta-learning-f75cb',
-    storageBucket: 'beta-learning-f75cb.appspot.com',
-    iosClientId: '472759397512-urbg7k8plrlohffc8ua3bh3i9cvh18ms.apps.googleusercontent.com',
+    apiKey: 'AIzaSyCl53-uQuvw3Ev1WJOisC8SlSGNfYuBHVA',
+    appId: '1:416537931713:ios:8c318939d89c65da7a0940',
+    messagingSenderId: '416537931713',
+    projectId: 'beta-jangalma',
+    storageBucket: 'beta-jangalma.appspot.com',
+    iosClientId: '416537931713-e0mevkflsjpgktfihu4nh8qehf904ef9.apps.googleusercontent.com',
     iosBundleId: 'com.example.jangalma',
   );
 }

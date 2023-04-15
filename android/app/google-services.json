@@ -1,41 +1,34 @@
 {
   "project_info": {
-    "project_number": "472759397512",
-    "project_id": "beta-learning-f75cb",
-    "storage_bucket": "beta-learning-f75cb.appspot.com"
+    "project_number": "416537931713",
+    "project_id": "beta-jangalma",
+    "storage_bucket": "beta-jangalma.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:472759397512:android:2bb2bd2002962ff606033d",
+        "mobilesdk_app_id": "1:416537931713:android:1f915c6fc75d76d27a0940",
         "android_client_info": {
           "package_name": "com.example.jangalma"
         }
       },
       "oauth_client": [
         {
-          "client_id": "472759397512-cri0gf1tm2fktb1a66me3r675j9s889e.apps.googleusercontent.com",
+          "client_id": "416537931713-1drgfdglh2g54d7lh5g9uufilll5v65l.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBLC_9TEYa_FRXj1kMXpxBFGOWZXoyYdd4"
+          "current_key": "AIzaSyDmNJ1HY3ba_UrWIpDtAxSUqmdlfDKdkOU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "472759397512-cri0gf1tm2fktb1a66me3r675j9s889e.apps.googleusercontent.com",
+              "client_id": "416537931713-1drgfdglh2g54d7lh5g9uufilll5v65l.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "472759397512-urbg7k8plrlohffc8ua3bh3i9cvh18ms.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.jangalma"
-              }
             }
           ]
         }
