@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:jangalma/screens/profile_screen/models/user_model.dart';
 
+import 'package:jangalma/screens/profile_screen/models/user_model.dart';
 import 'package:jangalma/screens/profile_screen/viewmodels/profile_viewmodel.dart';
 import 'package:jangalma/screens/profile_screen/widgets/edit_profile_button_widget.dart';
 import 'package:jangalma/screens/profile_screen/widgets/profile_item_information_widget.dart';
@@ -38,42 +38,44 @@ class ProfileScreen extends HookWidget {
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              const TopBarWidget(text: "PROFILE"),
-              SizedBox(height: MediaQuery.of(context).size.height*.05),
-              headerProfile(viewModel, context),
-              SizedBox(height: MediaQuery.of(context).size.height*.02),
-              ProfileItemInformationWidget(
-                editInput: viewModel.edit,
-                onChanged:  viewModel.setEmail,
-                text: viewModel.user.email,
-                icon: FontAwesomeIcons.envelope,
-                label: 'Email',
-                borderColor: -1,
-                backgroundColor: 3,
-              ),
-              SizedBox(height: MediaQuery.of(context).size.height*.02),
-              ProfileItemInformationWidget(
-                editInput: viewModel.edit,
-                onChanged: viewModel.setPhone,
-                text: viewModel.user.phone,
-                icon: FontAwesomeIcons.phone,
-                label: 'Phone number',
-                borderColor: -1,
-                backgroundColor: 3,
-              ),
-              SizedBox(height: MediaQuery.of(context).size.height*.02),
-              ProfileItemInformationWidget(
-                editInput: viewModel.edit,
-                onChanged: viewModel.setPhone,
-                text: viewModel.user.location,
-                icon: FontAwesomeIcons.locationPin,
-                label: 'Location',
-                borderColor: -1,
-                backgroundColor: 3,
-              ),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const TopBarWidget(text: "PROFILE"),
+                SizedBox(height: MediaQuery.of(context).size.height*.05),
+                headerProfile(viewModel, context),
+                SizedBox(height: MediaQuery.of(context).size.height*.02),
+                ProfileItemInformationWidget(
+                  editInput: viewModel.edit,
+                  onChanged:  viewModel.setEmail,
+                  text: viewModel.user.email,
+                  icon: FontAwesomeIcons.envelope,
+                  label: 'Email',
+                  borderColor: -1,
+                  backgroundColor: 3,
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height*.02),
+                ProfileItemInformationWidget(
+                  editInput: viewModel.edit,
+                  onChanged: viewModel.setPhone,
+                  text: viewModel.user.phone,
+                  icon: FontAwesomeIcons.phone,
+                  label: 'Phone number',
+                  borderColor: -1,
+                  backgroundColor: 3,
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height*.02),
+                ProfileItemInformationWidget(
+                  editInput: viewModel.edit,
+                  onChanged: viewModel.setPhone,
+                  text: viewModel.user.location,
+                  icon: FontAwesomeIcons.locationPin,
+                  label: 'Location',
+                  borderColor: -1,
+                  backgroundColor: 3,
+                ),
+              ],
+            ),
           ),
         ),
       ),
