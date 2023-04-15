@@ -6,9 +6,7 @@ import 'package:jangalma/services/firebase_firestore_api_service.dart';
 import 'package:jangalma/screens/ranking_screen/viewmodels/ranking_viewmodel.dart';
 import 'package:jangalma/screens/ranking_screen/widgets/card_item_widget.dart';
 import 'package:jangalma/screens/ranking_screen/widgets/ranking_content_widget.dart';
-import 'package:jangalma/widgets/exit_button_widget.dart';
 import 'package:jangalma/widgets/override_back_button_wrapper_widget.dart';
-import 'package:jangalma/widgets/button_widget.dart';
 import 'package:jangalma/widgets/topbar_widget.dart';
 
 class RankingScreen extends HookWidget {
@@ -66,7 +64,7 @@ class RankingScreen extends HookWidget {
         padding: padding,
         child: Column(
           children: [
-            TopBarWidget(text: "LEADBOARD"),
+            const TopBarWidget(text: "LEADBOARD"),
             RankingContentWidget(
               minimalCards: minimalCards,
               widgets: widgets
