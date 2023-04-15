@@ -20,7 +20,7 @@ class ScreenPaths {
 }
 
 final appRouter = GoRouter(
-  initialLocation: '/',
+  initialLocation: '/home',
   routes: [
     AppRoute(ScreenPaths.signup, (_) => const SignUpScreen(), useFade: true),
     AppRoute(ScreenPaths.home, (_) => const HomeScreen(), useFade: true),

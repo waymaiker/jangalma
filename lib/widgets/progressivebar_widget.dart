@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:linear_progress_bar/linear_progress_bar.dart';
 
@@ -16,6 +18,10 @@ class ProgressionBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color color = Platform.isIOS
+      ? const Color.fromRGBO(245, 245, 245, 1)
+      : const Color.fromRGBO(224, 224, 224, 1);
+
     final height = extraThin
       ? MediaQuery.of(context).size.height*0.0057
       : MediaQuery.of(context).size.height*0.015;
@@ -29,7 +35,7 @@ class ProgressionBar extends StatelessWidget {
           color: Colors.white,
           border: Border.all(
             width: 1,
-            color: Colors.grey.shade300
+            color: color
           ),
           borderRadius: const BorderRadius.all(
             Radius.circular(5)
@@ -40,7 +46,7 @@ class ProgressionBar extends StatelessWidget {
           progressType: LinearProgressBar.progressTypeLinear,
           currentStep: currentStep,
           progressColor: chooseCurrentColor(currentStep),
-          backgroundColor: Colors.grey.shade300,
+          backgroundColor: color
         )
       ),
     );

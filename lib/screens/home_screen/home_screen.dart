@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:jangalma/helpers/constants.dart';
 
 import 'package:jangalma/services/firebase_firestore_api_service.dart';
 
@@ -40,18 +43,12 @@ class HomeScreen extends HookWidget {
 
     return OverrideBackButtonWrapperWidget(
       child: Scaffold(
-        body: SizedBox(
-          height: MediaQuery.of(context).size.height,
-          width:  MediaQuery.of(context).size.width,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const HomeTopCard(),
-              SizedBox(height: MediaQuery.of(context).size.height*0.005),
-              const HomePublicity(),
-              HomeContentWidget(widgets: widgets),
-            ],
-          ),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const HomeTopCard(),
+            HomeContentWidget(widgets: widgets),
+          ],
         ),
       )
     );
@@ -66,7 +63,10 @@ class HomePublicity extends StatelessWidget {
     return GestureDetector(
       onTap: () => {},
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 6.0),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 8.0,
+          vertical: 6.0
+        ),
         child: CardItemContainerWidget(
           widget: Container(
             padding: const EdgeInsets.all(8.0),
@@ -84,21 +84,31 @@ class HomeTopCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const String image = "https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_1280.jpg";
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 6.0),
-      child: Container(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Text("WELCOME", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            GestureDetector(
-              onTap: () => GoRouter.of(context).go('/profile'),
-              child: const ImageWidget(src: image, sizeIcon: 1)
-            )
-          ],
+    return Platform.isIOS
+      ? Container(
+          color: FORTH_COLOR,
+          height: MediaQuery.of(context).size.height*.2,
+          child: topCardContent(context, image),
+        )
+      : topCardContent(context, image);
+  }
+
+  Row topCardContent(BuildContext context, String image) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        const Text(
+          "WELCOME",
+          style: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.bold
+          )
         ),
-      ),
+        GestureDetector(
+          onTap: () => GoRouter.of(context).go('/profile'),
+          child: ImageWidget(src: image, sizeIcon: 2)
+        )
+      ],
     );
   }
 }

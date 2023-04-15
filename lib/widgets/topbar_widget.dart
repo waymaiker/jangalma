@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jangalma/helpers/constants.dart';
 
 import 'package:jangalma/widgets/exit_button_widget.dart';
 
@@ -15,15 +16,20 @@ class TopBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        defaultStyle
-          ? defaultStyleWidget()
-          : widget,
-        const ExitButtonWidget()
-      ],
+    return Container(
+      color: FORTH_COLOR,
+      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*.05),
+      margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height*.01),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          defaultStyle
+            ? defaultStyleWidget()
+            : widget,
+          const ExitButtonWidget()
+        ],
+      ),
     );
   }
 

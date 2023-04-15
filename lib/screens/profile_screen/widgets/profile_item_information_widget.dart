@@ -26,23 +26,26 @@ class ProfileItemInformationWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CardItemContainerWidget(
-      borderColor: borderColor,
-      backgroundColor: backgroundColor,
-      isSmall: !editInput,
-      widget: Padding(
-       padding: Platform.isAndroid 
-        ? const EdgeInsets.all(8.0)
-        : const EdgeInsets.all(2.0),
-       child: Row(
-         children: [
-            SizedBox(width: MediaQuery.of(context).size.width*.01),
-            FaIcon(icon),
-            SizedBox(width: MediaQuery.of(context).size.width*.05),
-            content(context, editInput),
-          ],
-        ),
-      )
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: CardItemContainerWidget(
+        borderColor: borderColor,
+        backgroundColor: backgroundColor,
+        isSmall: !editInput,
+        widget: Padding(
+         padding: Platform.isIOS
+          ? const EdgeInsets.all(2.0)
+          : const EdgeInsets.all(8.0),
+         child: Row(
+           children: [
+              SizedBox(width: MediaQuery.of(context).size.width*.01),
+              FaIcon(icon),
+              SizedBox(width: MediaQuery.of(context).size.width*.05),
+              content(context, editInput),
+            ],
+          ),
+        )
+      ),
     );
   }
 

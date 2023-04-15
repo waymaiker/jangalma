@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -66,8 +68,12 @@ class CardItemLevel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width*.13,
-      height: MediaQuery.of(context).size.height*.07,
+      width: Platform.isIOS
+        ? MediaQuery.of(context).size.width*.1
+        : MediaQuery.of(context).size.width*.13,
+      height: Platform.isIOS
+        ? MediaQuery.of(context).size.height*.05
+        : MediaQuery.of(context).size.height*.07,
       decoration: BoxDecoration(
         color: Colors.yellowAccent.shade700,
         borderRadius: const BorderRadius.all(
@@ -79,12 +85,12 @@ class CardItemLevel extends StatelessWidget {
         fit: StackFit.passthrough,
         children: [
           Positioned(
-            left: MediaQuery.of(context).size.width*.045,
-            top: MediaQuery.of(context).size.height*.015,
+            left:Platform.isIOS ? MediaQuery.of(context).size.width*.035 : MediaQuery.of(context).size.width*.045,
+            top: Platform.isIOS ? MediaQuery.of(context).size.height*.012 : MediaQuery.of(context).size.height*.015,
             child: Text(
               level.toString(),
               style: TextStyle(
-                fontSize: 25,
+                fontSize: Platform.isIOS ? 20 : 25,
                 color: Colors.yellow.shade900,
                 fontWeight: FontWeight.bold
               ),

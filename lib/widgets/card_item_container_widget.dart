@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 class CardItemContainerWidget extends StatelessWidget {
@@ -17,9 +19,11 @@ class CardItemContainerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: isSmall 
-        ? MediaQuery.of(context).size.height*.08 
-        : MediaQuery.of(context).size.height*.15,
+      height: isSmall
+        ? MediaQuery.of(context).size.height*.08
+        : Platform.isIOS
+          ? MediaQuery.of(context).size.height*.1
+          : MediaQuery.of(context).size.height*.15,
       decoration: boxDecoration(),
       child: widget
     );

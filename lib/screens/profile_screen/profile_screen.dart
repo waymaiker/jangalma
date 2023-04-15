@@ -36,46 +36,43 @@ class ProfileScreen extends HookWidget {
 
     return OverrideBackButtonWrapperWidget(
       child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                const TopBarWidget(text: "PROFILE"),
-                SizedBox(height: MediaQuery.of(context).size.height*.05),
-                headerProfile(viewModel, context),
-                SizedBox(height: MediaQuery.of(context).size.height*.02),
-                ProfileItemInformationWidget(
-                  editInput: viewModel.edit,
-                  onChanged:  viewModel.setEmail,
-                  text: viewModel.user.email,
-                  icon: FontAwesomeIcons.envelope,
-                  label: 'Email',
-                  borderColor: -1,
-                  backgroundColor: 3,
-                ),
-                SizedBox(height: MediaQuery.of(context).size.height*.02),
-                ProfileItemInformationWidget(
-                  editInput: viewModel.edit,
-                  onChanged: viewModel.setPhone,
-                  text: viewModel.user.phone,
-                  icon: FontAwesomeIcons.phone,
-                  label: 'Phone number',
-                  borderColor: -1,
-                  backgroundColor: 3,
-                ),
-                SizedBox(height: MediaQuery.of(context).size.height*.02),
-                ProfileItemInformationWidget(
-                  editInput: viewModel.edit,
-                  onChanged: viewModel.setPhone,
-                  text: viewModel.user.location,
-                  icon: FontAwesomeIcons.locationPin,
-                  label: 'Location',
-                  borderColor: -1,
-                  backgroundColor: 3,
-                ),
-              ],
-            ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              const TopBarWidget(text: "PROFILE"),
+              SizedBox(height: MediaQuery.of(context).size.height*.05),
+              headerProfile(viewModel, context),
+              SizedBox(height: MediaQuery.of(context).size.height*.02),
+              ProfileItemInformationWidget(
+                editInput: viewModel.edit,
+                onChanged:  viewModel.setEmail,
+                text: viewModel.user.email,
+                icon: FontAwesomeIcons.envelope,
+                label: 'Email',
+                borderColor: -1,
+                backgroundColor: 3,
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height*.02),
+              ProfileItemInformationWidget(
+                editInput: viewModel.edit,
+                onChanged: viewModel.setPhone,
+                text: viewModel.user.phone,
+                icon: FontAwesomeIcons.phone,
+                label: 'Phone number',
+                borderColor: -1,
+                backgroundColor: 3,
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height*.02),
+              ProfileItemInformationWidget(
+                editInput: viewModel.edit,
+                onChanged: viewModel.setPhone,
+                text: viewModel.user.location,
+                icon: FontAwesomeIcons.locationPin,
+                label: 'Location',
+                borderColor: -1,
+                backgroundColor: 3,
+              ),
+            ],
           ),
         ),
       ),
@@ -88,7 +85,7 @@ class ProfileScreen extends HookWidget {
         children: [
           ImageWidget(
             src: viewModel.photoURL,
-            sizeIcon: 2,
+            sizeIcon: 3,
           ),
           profileName(viewModel.user.fullName),
           pseudoTag(viewModel.user.pseudoTag),

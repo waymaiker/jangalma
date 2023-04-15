@@ -13,19 +13,19 @@ class ImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     double width;
     double height;
-    
+
     switch (sizeIcon) {
       case 1:
         width = MediaQuery.of(context).size.width*.1;
         height = MediaQuery.of(context).size.height*.05;
         break;
       case 2:
-        width = MediaQuery.of(context).size.width*.4;
-        height = MediaQuery.of(context).size.height*.2;
+        width = MediaQuery.of(context).size.width*.2;
+        height = MediaQuery.of(context).size.height*.1;
         break;
       case 3:
-        width = MediaQuery.of(context).size.width*.1;
-        height = MediaQuery.of(context).size.height*.05;
+        width = MediaQuery.of(context).size.width*.4;
+        height = MediaQuery.of(context).size.height*.2;
         break;
       default:
         width = MediaQuery.of(context).size.width*.15;
@@ -35,7 +35,7 @@ class ImageWidget extends StatelessWidget {
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(150),
-      child: Image.network(        
+      child: Image.network(
         src,
         fit: BoxFit.cover,
         width: width,
