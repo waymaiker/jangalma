@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ExitButtonWidget extends StatelessWidget {
-  final Function actions;
 
-  const ExitButtonWidget({
-    required this.actions
-  });
+  const ExitButtonWidget();
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => {
-        actions()
-      },
+      onTap: () => GoRouter.of(context).go('/home'),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
