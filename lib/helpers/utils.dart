@@ -1,3 +1,11 @@
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+
+double scrollPaddingBottom(BuildContext context) => Platform.isAndroid
+  ? MediaQuery.of(context).viewInsets.bottom+MediaQuery.of(context).size.height*.2
+  : MediaQuery.of(context).viewInsets.bottom+MediaQuery.of(context).size.height*.15;
+
 String? validateString(String type, String? value, Function? hasError) {
   String? message;
   if(value!.isEmpty){

@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:jangalma/helpers/utils.dart';
 
@@ -27,9 +25,6 @@ class TextFieldWidget extends StatelessWidget {
     Function validator = () => {};
     bool obscureText = false;
     TextInputType keyboardType;
-    double scrollPaddingBottom = Platform.isAndroid
-      ? MediaQuery.of(context).viewInsets.bottom+MediaQuery.of(context).size.height*.2
-      : MediaQuery.of(context).viewInsets.bottom+MediaQuery.of(context).size.height*.15;
 
     switch (type) {
       case "email":
@@ -57,7 +52,7 @@ class TextFieldWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8),
       width: MediaQuery.of(context).size.width*.9,
       child: TextFormField(
-        scrollPadding: EdgeInsets.only(bottom: scrollPaddingBottom),
+        scrollPadding: EdgeInsets.only(bottom: scrollPaddingBottom(context)),
         validator: (value) => validator(value),
         obscureText: obscureText,
         keyboardType: keyboardType,

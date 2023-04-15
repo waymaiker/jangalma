@@ -1,6 +1,8 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'package:jangalma/helpers/utils.dart';
 import 'package:jangalma/widgets/card_item_container_widget.dart';
 
 class ProfileItemInformationWidget extends StatelessWidget {
@@ -29,7 +31,9 @@ class ProfileItemInformationWidget extends StatelessWidget {
       backgroundColor: backgroundColor,
       isSmall: !editInput,
       widget: Padding(
-       padding: const EdgeInsets.all(8.0),
+       padding: Platform.isAndroid 
+        ? const EdgeInsets.all(8.0)
+        : const EdgeInsets.all(2.0),
        child: Row(
          children: [
             SizedBox(width: MediaQuery.of(context).size.width*.01),
@@ -55,7 +59,8 @@ class ProfileItemInformationWidget extends StatelessWidget {
          ? Container(
             padding: const EdgeInsets.symmetric(vertical: 8),
             width: MediaQuery.of(context).size.width*.7,
-            child: TextField(
+            child: TextFormField(
+              scrollPadding: EdgeInsets.only(bottom: scrollPaddingBottom(context)),
               keyboardType: TextInputType.text,
               onChanged: (value) => onChanged(value),
               decoration: InputDecoration(
