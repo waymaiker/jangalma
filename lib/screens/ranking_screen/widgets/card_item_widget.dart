@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:jangalma/widgets/image_widget.dart';
 
 class CardItemWidget extends StatelessWidget {

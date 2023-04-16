@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jangalma/helpers/constants.dart';
 
+import 'package:jangalma/helpers/constants.dart';
 import 'package:jangalma/widgets/exit_button_widget.dart';
 
 class TopBarWidget extends StatelessWidget {

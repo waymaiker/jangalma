@@ -2,19 +2,16 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:jangalma/helpers/constants.dart';
-import 'package:jangalma/screens/home_screen/widgets/topbar_widget.dart';
 
 import 'package:jangalma/services/firebase_firestore_api_service.dart';
 
+import 'package:jangalma/screens/home_screen/widgets/topbar_widget.dart';
 import 'package:jangalma/screens/home_screen/viewmodels/home_viewmodel.dart';
 import 'package:jangalma/screens/home_screen/widgets/card_item_home_widget.dart';
 import 'package:jangalma/screens/home_screen/widgets/home_content.dart';
 
 import 'package:jangalma/widgets/card_item_container_widget.dart';
-import 'package:jangalma/widgets/image_widget.dart';
 import 'package:jangalma/widgets/override_back_button_wrapper_widget.dart';
 
 class HomeScreen extends HookWidget {
