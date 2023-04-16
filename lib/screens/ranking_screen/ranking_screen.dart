@@ -52,25 +52,15 @@ class RankingScreen extends HookWidget {
       ),
     );
 
-    var padding = EdgeInsets.only(
-      left: MediaQuery.of(context).size.height*0.01,
-      right: MediaQuery.of(context).size.height*0.01,
-    );
-
     return OverrideBackButtonWrapperWidget(
-      child: Container(
-        height: MediaQuery.of(context).size.height,
-        width:  MediaQuery.of(context).size.width,
-        padding: padding,
-        child: Column(
-          children: [
-            const TopBarWidget(text: "LEADBOARD"),
-            RankingContentWidget(
-              minimalCards: minimalCards,
-              widgets: widgets
-            ),
-          ],
-        ),
+      child: Column(
+        children: [
+          const TopBarWidget(text: "LEADBOARD"),
+          RankingContentWidget(
+            minimalCards: minimalCards,
+            widgets: widgets
+          ),
+        ],
       )
     );
   }

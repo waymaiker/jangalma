@@ -33,17 +33,16 @@ class TopBarWidget extends StatelessWidget {
     );
   }
 
-  Row defaultStyleWidget() {
-    return Row(
-      children: [
-        Text(
-          text,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 25
-          )
-        ),
-      ],
+  Padding defaultStyleWidget() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: Text(
+        text,
+        style: const TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 25
+        )
+      ),
     );
   }
 }
