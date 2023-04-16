@@ -4,8 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class ExitButtonWidget extends StatelessWidget {
+  final Function userActionsWhenExiting;
 
-  const ExitButtonWidget();
+  const ExitButtonWidget({
+    required this.userActionsWhenExiting
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +16,10 @@ class ExitButtonWidget extends StatelessWidget {
       ? const Color.fromRGBO(245, 245, 245, 1)
       : const Color.fromRGBO(224, 224, 224, 1);
     return GestureDetector(
-      onTap: () => GoRouter.of(context).go('/home'),
+      onTap: () {
+        userActionsWhenExiting();
+        GoRouter.of(context).go('/home');
+      },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(

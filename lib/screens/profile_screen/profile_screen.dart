@@ -39,7 +39,7 @@ class ProfileScreen extends HookWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              const TopBarWidget(text: "PROFILE"),
+              TopBarWidget(text: "PROFILE", whenClickExitButton: () => viewModel.resetForm()),
               SizedBox(height: MediaQuery.of(context).size.height*.05),
               headerProfile(viewModel, context),
               SizedBox(height: MediaQuery.of(context).size.height*.02),

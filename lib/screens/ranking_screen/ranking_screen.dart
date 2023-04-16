@@ -55,7 +55,10 @@ class RankingScreen extends HookWidget {
     return OverrideBackButtonWrapperWidget(
       child: Column(
         children: [
-          const TopBarWidget(text: "LEADBOARD"),
+          TopBarWidget(
+            text: "LEADBOARD",
+            whenClickExitButton: () => {},
+          ),
           RankingContentWidget(
             minimalCards: minimalCards,
             widgets: widgets

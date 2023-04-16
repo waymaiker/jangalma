@@ -67,4 +67,9 @@ class ProfileViewModel extends ChangeNotifier {
     location = locationReceived;
     notifyListeners();
   }
+
+  void resetForm(){
+    edit = false;
+    notifyListeners();
+  }
 }

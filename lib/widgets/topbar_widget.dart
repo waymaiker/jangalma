@@ -7,11 +7,13 @@ class TopBarWidget extends StatelessWidget {
   final String text;
   final bool defaultStyle;
   final Widget widget;
+  final Function whenClickExitButton;
 
   const TopBarWidget({
+    required this.whenClickExitButton,
     this.widget = const SizedBox(),
     this.text = '',
-    this.defaultStyle = true
+    this.defaultStyle = true,
   });
 
   @override
@@ -27,7 +29,7 @@ class TopBarWidget extends StatelessWidget {
           defaultStyle
             ? defaultStyleWidget()
             : widget,
-          const ExitButtonWidget()
+          ExitButtonWidget(userActionsWhenExiting: () => whenClickExitButton())
         ],
       ),
     );

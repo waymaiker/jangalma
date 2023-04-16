@@ -166,6 +166,7 @@ class QuizWrapperComponent extends HookWidget {
           Column(
             children: [
               TopBarWidget(
+                whenClickExitButton: () => {},
                 defaultStyle: false,
                 widget: ProgressionBar(
                   maxSteps: viewModel.questions.length,
