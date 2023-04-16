@@ -18,8 +18,9 @@ class RankingContentWidget extends StatelessWidget {
           children: [...minimalCards],
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height*.73,
+          height: MediaQuery.of(context).size.height*.70,
           child: ListView.builder(
+            padding: EdgeInsets.zero,
             itemCount: widgets.length,
             itemBuilder: (context, index){
               return widgets[index];
