@@ -11,17 +11,24 @@ class HomeContentWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: Platform.isIOS
-        ? MediaQuery.of(context).size.height*.8
-        : MediaQuery.of(context).size.height*.74,
-      child: ListView.builder(
-        padding: EdgeInsets.zero,
-        itemCount: widgets.length,
-        itemBuilder: (context, index){
-          return widgets[index];
-        },
-      ),
-    );
+    return Platform.isIOS
+      ? SliverList(
+          delegate: SliverChildBuilderDelegate(
+            childCount: widgets.length,
+            (BuildContext context, int index) {
+              return widgets[index];
+            },
+          )
+        )
+      : SizedBox(
+          height: MediaQuery.of(context).size.height*.74,
+          child: ListView.builder(
+            padding: EdgeInsets.zero,
+            itemCount: widgets.length,
+            itemBuilder: (context, index){
+              return widgets[index];
+            },
+          ),
+        );
   }
 }
