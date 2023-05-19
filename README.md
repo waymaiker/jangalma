@@ -1,4 +1,4 @@
-# Jangalma
+# Jangalma - Beta Version
 
 **Jangalma** is a platform allowing teachers to create interactive exercises to learn a speaking language.
 
@@ -26,7 +26,7 @@ There are 3 types of users:
 
 Students 
 
-### 1 - Front-Office
+### 1 - Front-Office - Beta
 Allows teachers to share their programs with Students
 
 There are 2 types of programs:
