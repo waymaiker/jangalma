@@ -14,7 +14,7 @@ I believe that language is the universal key for knowledge.
 We often hear that "the world is a small village", which is more true than ever.
 Jangalma is here to bridging the gap between people and a world full of opportunity. 
 
-This is the front-office of the application.
+This is the front-office, available as a mobile application on ANDROID and IOS
 
 ## Overview
 The platform is composed of a Front-Office (Mobile App) and a Back-Office (Web App)
