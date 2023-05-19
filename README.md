@@ -26,7 +26,7 @@ There are 3 types of users:
 
 Students 
 
-### 1 - Front-Office - Beta
+### 1 - Front-Office (beta version)
 Allows teachers to share their programs with Students
 
 There are 2 types of programs:
