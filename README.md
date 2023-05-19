@@ -41,7 +41,7 @@ Main features:
 ### 2 - Back-Office
 Allows Teachers to create and managed their programs and communities
 
-# Resources
+## Resources
 
 - Personal packages
 - https://flutter.dev/
