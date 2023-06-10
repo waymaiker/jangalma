@@ -19,17 +19,15 @@ class TopBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: FORTH_COLOR,
       padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*.01),
       margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height*.01),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          ExitButtonWidget(userActionsWhenExiting: () => whenClickExitButton()),
           defaultStyle
             ? defaultStyleWidget()
             : widget,
-          ExitButtonWidget(userActionsWhenExiting: () => whenClickExitButton())
         ],
       ),
     );

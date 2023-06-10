@@ -107,7 +107,7 @@ List<Map<String, dynamic>> getQuestionsFromFirebse() {
       "answerTranslated": "Je viens demain",
       "wordsToSelectAnswer": ["Dinaa"],
       "selectableWords": ["enga", "uma", "inaa"],
-      "title": "Complete the word" ,
+      "title": "Complete the words" ,
       "type": "completetheword",
       "result": -1
     },
