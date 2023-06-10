@@ -6,7 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:jangalma/services/firebase_firestore_api_service.dart';
 
-import 'package:jangalma/screens/home_screen/widgets/topbar_widget.dart';
+import 'package:jangalma/screens/home_screen/widgets/home_top_card_widget.dart';
 import 'package:jangalma/screens/home_screen/viewmodels/home_viewmodel.dart';
 import 'package:jangalma/screens/home_screen/widgets/card_item_home_widget.dart';
 import 'package:jangalma/screens/home_screen/widgets/home_content.dart';
@@ -47,7 +47,6 @@ class HomeScreen extends HookWidget {
         title: HomeTopCard(),
       );
     }
-
 
     return OverrideBackButtonWrapperWidget(
       child: Scaffold(

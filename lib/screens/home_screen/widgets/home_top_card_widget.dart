@@ -18,22 +18,25 @@ class HomeTopCard extends StatelessWidget {
       : topCardContent(context, image);
   }
 
-  Row topCardContent(BuildContext context, String image) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        const Text(
-          "WELCOME",
-          style: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.bold
+  Padding topCardContent(BuildContext context, String image) {
+    return Padding(
+      padding: const EdgeInsets.all(19.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const Text(
+            "WELCOME",
+            style: TextStyle(
+              fontSize: 25,
+              fontWeight: FontWeight.bold
+            )
+          ),
+          GestureDetector(
+            onTap: () => GoRouter.of(context).go('/profile'),
+            child: ImageWidget(src: image, sizeIcon: 1)
           )
-        ),
-        GestureDetector(
-          onTap: () => GoRouter.of(context).go('/profile'),
-          child: ImageWidget(src: image, sizeIcon: 1)
-        )
-      ],
+        ],
+      ),
     );
   }
 }
