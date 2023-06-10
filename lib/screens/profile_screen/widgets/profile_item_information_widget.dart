@@ -35,10 +35,10 @@ class ProfileItemInformationWidget extends StatelessWidget {
         widget: Padding(
          padding: Platform.isIOS
           ? const EdgeInsets.all(2.0)
-          : const EdgeInsets.all(8.0),
+          : const EdgeInsets.all(15.0),
          child: Row(
            children: [
-              SizedBox(width: MediaQuery.of(context).size.width*.01),
+              SizedBox(width: MediaQuery.of(context).size.width*.04),
               FaIcon(icon),
               SizedBox(width: MediaQuery.of(context).size.width*.05),
               content(context, editInput),
@@ -54,24 +54,20 @@ class ProfileItemInformationWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          label,
-          style: TextStyle(color: Colors.grey.shade600)
-        ),
         edit
-         ? Container(
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            width: MediaQuery.of(context).size.width*.7,
-            child: TextFormField(
-              scrollPadding: EdgeInsets.only(bottom: scrollPaddingBottom(context)),
-              keyboardType: TextInputType.text,
-              onChanged: (value) => onChanged(value),
-              decoration: InputDecoration(
-                hintText: text,
+          ? Container(
+              padding: const EdgeInsets.symmetric(vertical: 6),
+              width: MediaQuery.of(context).size.width*.7,
+              child: TextFormField(
+                scrollPadding: EdgeInsets.only(bottom: scrollPaddingBottom(context)),
+                keyboardType: TextInputType.text,
+                onChanged: (value) => onChanged(value),
+                decoration: InputDecoration(
+                  hintText: text,
+                ),
               ),
-            ),
-         )
-         : Text(text, style: const TextStyle(fontWeight: FontWeight.bold))
+            )
+          : Text(text, style: const TextStyle(fontWeight: FontWeight.bold))
       ],
     );
   }

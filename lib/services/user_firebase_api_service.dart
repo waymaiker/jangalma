@@ -2,7 +2,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import 'package:jangalma/screens/profile_screen/models/user_model.dart';
+import 'package:jangalma/models/user_model.dart';
 
 final FirebaseFirestore _instance = FirebaseFirestore.instance;
 final FirebaseAuth _auth = FirebaseAuth.instance;

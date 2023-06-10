@@ -1,4 +1,3 @@
-
 import 'package:jangalma/services/user_firebase_api_service.dart';
 
 class UserModel {

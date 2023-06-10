@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:jangalma/helpers/utils.dart';
-import 'package:jangalma/screens/profile_screen/models/user_model.dart';
+import 'package:jangalma/models/user_model.dart';
 
 final signupViewModelProvider = ChangeNotifierProvider(
   (ref) => SignupViewModel()
