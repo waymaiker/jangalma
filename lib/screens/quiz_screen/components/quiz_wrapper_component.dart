@@ -1,3 +1,4 @@
+import 'package:completethechat/completethechat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
@@ -149,6 +150,21 @@ class QuizWrapperComponent extends HookWidget {
             action: () => nextQuestion(),
             withImage: viewModel.questions[questionIndex.value]["image"],
             isSentenceAQuestion: viewModel.questions[questionIndex.value]["answer"].contains('?'),
+          );
+          break;
+        case 'completethechat':
+          questionWidget = CompleteTheChat(
+            id: viewModel.questions[questionIndex.value]["id"],
+            title: viewModel.questions[questionIndex.value]["title"],
+            titleButton: 'NEXT',
+            titleButtonSheet: isNotLastQuestion() ? 'NEXT' : 'SEE RESULT',
+            dialogs: viewModel.questions[questionIndex.value]["dialogs"],
+            options: viewModel.questions[questionIndex.value]["options"],
+            answers: viewModel.questions[questionIndex.value]["answers"],
+            questions: viewModel.questions[questionIndex.value]["questions"],
+            sentencesToCompleteIndex: viewModel.questions[questionIndex.value]["sentencesToCompleteIndex"],
+            setQuestionResult: setQuestionResult,
+            action: () => nextQuestion(),
           );
           break;
         default:

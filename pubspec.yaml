@@ -55,6 +55,8 @@ dependencies:
     path: ../../packages/EdTech/completethesentence
   completetheword:
     path: ../../packages/EdTech/completetheword
+  completethechat:
+    path: ../../packages/EdTech/completethechat
 
 
   # The following adds the Cupertino Icons font to your application.

@@ -100,17 +100,41 @@ List<Map<String, dynamic>> getQuestionsFromFirebse() {
     //   "type": "completetheword",
     //   "result": -1
     // },
+    // {
+    //   "id": 11,
+    //   "image": "",
+    //   "answer": "Dinaa dem suba",
+    //   "answerTranslated": "Je viens demain",
+    //   "wordsToSelectAnswer": ["Dinaa"],
+    //   "selectableWords": ["enga", "uma", "inaa"],
+    //   "title": "Complete the words" ,
+    //   "type": "completetheword",
+    //   "result": -1
+    // },
     {
-      "id": 11,
-      "image": "",
-      "answer": "Dinaa dem suba",
-      "answerTranslated": "Je viens demain",
-      "wordsToSelectAnswer": ["Dinaa"],
-      "selectableWords": ["enga", "uma", "inaa"],
-      "title": "Complete the words" ,
-      "type": "completetheword",
+      "id": 12,
+      "dialogs": {
+        0: "Lorem ipsum de la",
+        1: "Lorem ipsum de la",
+        2: "Lorem ipsum de la",
+        3: "",
+        4: "Lorem ipsum de la",
+        5: "Lorem ipsum de la",
+        6: "",
+        7: "",
+      },
+      "options": {
+        3: ["Juan", "Lavar", "Devonte"],
+        6: ["2", "6", "1", "5"],
+        7: ["Kayla", "Kainah", "Gnilane"],
+      },
+      "sentencesToCompleteIndex": [3, 6, 7],
+      "questions": ["Who is the mail man ?", "How many children does she have ?", "What is her name ?"],
+      "answers": ["Lavar", "5", "Kayla"],
+      "type": "completethechat",
+      "title": "Complete The Chat",
       "result": -1
-    },
+    }  ,
   ];
 
   return questions;
