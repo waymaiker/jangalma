@@ -26,29 +26,26 @@ class ProgressionBar extends StatelessWidget {
       ? MediaQuery.of(context).size.height*0.0057
       : MediaQuery.of(context).size.height*0.015;
 
-    return Padding(
-      padding: const EdgeInsets.only(left: 10.0),
-      child: Container(
-        height: height,
-        width: MediaQuery.of(context).size.width*0.83,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(
-            width: 1,
-            color: color
-          ),
-          borderRadius: const BorderRadius.all(
-            Radius.circular(5)
-          )
+    return Container(
+      height: height,
+      width: MediaQuery.of(context).size.width*0.87,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border.all(
+          width: 1,
+          color: color
         ),
-        child: LinearProgressBar(
-          maxSteps: maxSteps,
-          progressType: LinearProgressBar.progressTypeLinear,
-          currentStep: currentStep,
-          progressColor: chooseCurrentColor(currentStep),
-          backgroundColor: color
+        borderRadius: const BorderRadius.all(
+          Radius.circular(5)
         )
       ),
+      child: LinearProgressBar(
+        maxSteps: maxSteps,
+        progressType: LinearProgressBar.progressTypeLinear,
+        currentStep: currentStep,
+        progressColor: chooseCurrentColor(currentStep),
+        backgroundColor: color
+      )
     );
   }
 

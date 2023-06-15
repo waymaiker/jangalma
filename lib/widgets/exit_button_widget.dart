@@ -17,15 +17,12 @@ class ExitButtonWidget extends StatelessWidget {
         userActionsWhenExiting();
         GoRouter.of(context).go('/home');
       },
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-          padding: const EdgeInsets.all(2.0),
-          child: const Icon(
-            Icons.close,
-            size: 30,
-            color: Colors.grey,
-          ),
+      child: Container(
+        padding: const EdgeInsets.all(4.0),
+        child: const Icon(
+          Icons.close,
+          size: 30,
+          color: Colors.grey,
         ),
       ),
     );

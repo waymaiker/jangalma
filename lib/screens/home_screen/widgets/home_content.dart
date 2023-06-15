@@ -21,7 +21,7 @@ class HomeContentWidget extends StatelessWidget {
           )
         )
       : SizedBox(
-          height: MediaQuery.of(context).size.height*.9,
+          height: MediaQuery.of(context).size.height*.89,
           child: ListView.builder(
             padding: EdgeInsets.zero,
             itemCount: widgets.length,
